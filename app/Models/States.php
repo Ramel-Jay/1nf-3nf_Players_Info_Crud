@@ -13,4 +13,8 @@ class States extends Model
         'state_code',
         'city',
     ];
+
+    public function players(){
+        return $this->hasMany(Players::class, 'state_code', 'state_code');
+    }
 }

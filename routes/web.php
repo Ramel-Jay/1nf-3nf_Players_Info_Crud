@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::prefix('admin')->group( function () {
+    Route::controller(App\Http\Controllers\PlayersController::class)->group(function () {
+        Route::get('players', 'index');
+        Route::get('players/create', 'create');
+        Route::post('players', 'store');
+    });
+});
