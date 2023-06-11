@@ -10,7 +10,6 @@ class States extends Model
     use HasFactory;
 
     protected $fillable = [
-        'state_code',
         'city',
     ];
 
