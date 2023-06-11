@@ -29,9 +29,10 @@ class PlayersController extends Controller
         // $games = ModelsGames::findOrFail($request->game_id);
         $roles = ModelsRoles::findOrFail($request->role_id);
         // $states = ModelsStates::findOrFail($request->state_code);
+        // dd($states);
 
         $roles->players()->create([
-            'role_id' => $request->role_id,
+            // 'role_id' => $request->role_id,
             'game_id' => $request->game_id,
             'name' => $request->name,
             'ign' => $request->ign,

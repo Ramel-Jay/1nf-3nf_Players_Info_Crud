@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
 return new class extends Migration
 {
@@ -27,7 +28,12 @@ return new class extends Migration
         });
 
         Schema::table('players', function (Blueprint $table){
-            $table->foreignId('state_code')->constrained()->on('states')->onDelete('cascade');
+            // $table->foreignId('state_code')->constrained()->on('states')->onDelete('cascade');
+            // $table->unsignedBigInteger('state_code');
+            // $table->foreignId('state_code')->reference('state_code')->constrained()->on('states')->onDelete('cascade');
+            $table->foreignId('state_code')->nullable()->constrained('states')->onDelete('cascade');
+            // $table->unsignedBigInteger('state_code');
+            // $table->foreign('state_code')->references('state_code')->on('states');
         });
     }
 
