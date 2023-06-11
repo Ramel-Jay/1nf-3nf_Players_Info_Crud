@@ -23,5 +23,6 @@ Route::prefix('admin')->group( function () {
         Route::get('players', 'index');
         Route::get('players/create', 'create');
         Route::post('players', 'store');
+        Route::get('players/{player}/edit', 'edit');
     });
 });

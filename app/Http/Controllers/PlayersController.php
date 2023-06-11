@@ -42,4 +42,14 @@ class PlayersController extends Controller
 
         return redirect('admin/players');
     }
+
+    public function edit(int $players){
+
+        $games = ModelsGames::all();
+        $roles = ModelsRoles::all();
+        $states = ModelsStates::all();
+
+        $players = ModelsPlayers::findOrFail($players);
+        return view('admin/players/edit', compact('games','roles','states'));
+    }
 }
