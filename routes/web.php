@@ -25,5 +25,6 @@ Route::prefix('admin')->group( function () {
         Route::post('players', 'store');
         Route::get('players/{player}/edit', 'edit');
         Route::put('players/{player}', 'update');
+        Route::get('players/{player_id}/delete', 'destroy');
     });
 });

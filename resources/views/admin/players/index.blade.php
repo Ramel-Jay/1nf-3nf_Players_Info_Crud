@@ -22,7 +22,7 @@
                 <td>{{ $player->state->city }}</td>
                 <td>
                     <a href="{{ url('admin/players/'.$player->id.'/edit') }}">Edit</a>
-                    <button>Delete</button>
+                    <a href="{{ url('admin/players/'.$player->id.'/delete') }}">Delete</a>
                 </td>
             </tr>
         @endforeach
