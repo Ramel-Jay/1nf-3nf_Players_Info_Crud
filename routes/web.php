@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlayersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,8 @@ Route::prefix('admin')->group( function () {
         Route::get('players/{player}/edit', 'edit');
         Route::put('players/{player}', 'update');
         Route::get('players/{player_id}/delete', 'destroy');
+        // Route::get('players', 'search');
     });
 });
+
+Route::get('/admin/players/search', [PlayersController::class, 'search'])->name('search.players');

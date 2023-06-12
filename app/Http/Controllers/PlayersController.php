@@ -73,4 +73,19 @@ class PlayersController extends Controller
         ModelsPlayers::findOrFail($player_id)->delete();
         return redirect('admin/players');
     }
+
+    public function search(){
+        $query = request()->query('query');
+
+        if($query){
+            $players = ModelsPlayers::where('name', 'LIKE', "%{$query}%")->simplePaginate(10);
+            // dd($players);
+        } else {
+            $players = ModelsPlayers::simplePaginate(10);
+            // dd($players);
+        }
+
+        // return view('admin/players')->with('players', $players);
+        return view('admin.players.index')->with('players', $players);
+    }
 }

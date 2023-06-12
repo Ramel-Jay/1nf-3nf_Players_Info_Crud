@@ -1,4 +1,15 @@
 <a href={{ url('admin/players/create') }} class="btn btn-primary">Add Player</a>
+
+<h1>Search Players</h1>
+<form action="{{ route('search.players') }}" method="GET">
+    @csrf
+    @method('get')
+    <div>
+        <input type="search" id="query" name="query" required>
+        <button type="submit" >Search</button>
+    </div>
+</form>
+
 <table>
     <thead>
         <tr>
