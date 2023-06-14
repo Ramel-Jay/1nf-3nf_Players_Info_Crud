@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group( function () {
     Route::controller(App\Http\Controllers\PlayersController::class)->group(function () {
-        Route::get('players', 'index');
-        Route::get('players/create', 'create');
-        Route::post('players', 'store');
+        Route::get('players', 'index'); //mainview of the page
+        Route::get('players/create', 'create');//gin kuha la an mga compact han tables
+        Route::post('players', 'store'); 
         Route::get('players/{player}/edit', 'edit');
         Route::put('players/{player}', 'update');
         Route::get('players/{player_id}/delete', 'destroy');

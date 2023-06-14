@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('ign')->unique();
             $table->string('address');
 
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');//gamit an role_id as foreign key paara maka connect ha usa nga table same an tulo
             $table->foreign('state_code')->references('state_code')->on('states')->onDelete('cascade');
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
             $table->timestamps();
